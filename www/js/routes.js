@@ -50,17 +50,8 @@ routes = [
     url: './pages/foodcourt/koufu.html'
   },
   {
-<<<<<<< HEAD
-    path: '/store-details/miniwok',
-    url: './pages/store-details/miniwok.html',
-  },
-  {
-    path: '/store-details/western',
-    url: './pages/store-details/western.html',
-=======
     path: '/classroom/',
     url: './pages/classroom.html',
->>>>>>> origin/master
   },
   // Page Loaders & Router
   {
