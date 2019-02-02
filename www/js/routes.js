@@ -37,8 +37,17 @@ routes = [
     url: './pages/classes.html',
   },
   {
+
     path: '/modules/',
     url: './pages/modules.html',
+  },
+  {
+    path: '/foodcourt/nsfc',
+    url: './pages/foodcourt/nsfc.html'
+  },
+  {
+    path: '/foodcourt/koufu',
+    url: './pages/foodcourt/koufu.html'
   },
   // Page Loaders & Router
   {
