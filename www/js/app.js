@@ -41,7 +41,8 @@ var mainView = app.views.create('.view-main', {
 });
 
 
-// app.loginScreen.open('#my-login-screen', true);
+//app.loginScreen.open('#my-login-screen', true);
+
 
 // Login Screen Demo
 $$('#my-login-screen .login-button').on('click', function () {
@@ -55,11 +56,7 @@ $$('#my-login-screen .login-button').on('click', function () {
   if(usernames.indexOf(username) != -1 && passwords.indexOf(password) != -1)
   { 
     app.loginScreen.close('#my-login-screen');
-    if(username != 'c160150')
-      app.dialog.alert(username,"Welcome");
-    else
-      app.dialog.alert(username,"Welcome Supreme Leeader");
-    $$('#leftId').html(username)
+    app.dialog.alert(username,"Welcome");
   }
   else{
     // Close login screen
