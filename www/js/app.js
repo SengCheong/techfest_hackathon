@@ -1,5 +1,15 @@
 // Dom7
 var $$ = Dom7;
+var notificationCount = 2;
+
+udpateNotiCounter(notificationCount);
+
+function udpateNotiCounter(notificationCount){
+  $$(".badge").each(function(){
+    $$(this).html(notificationCount);
+  });
+}
+
 
 // Framework7 App main instance
 var app  = new Framework7({
@@ -61,7 +71,8 @@ $$('#my-login-screen .login-button').on('click', function () {
     if(username != 'c160150')
       app.dialog.alert(username,"Welcome");
     else
-      app.dialog.alert(username,"Welcome Supreme Leader");
+      app.dialog.alert(username,"Welcome Supreme Leeader");
+    $$('#leftId').html(username);
   }
   else{
     // Close login screen
@@ -71,3 +82,51 @@ $$('#my-login-screen .login-button').on('click', function () {
 
 
 });
+
+function notificationReset(){
+  console.log("Here");
+  notificationCount =0;
+  udpateNotiCounter(notificationCount);
+}
+
+//Testing OrderFood
+orderFood("Black Stuff", "Nigga Land");
+
+
+//Add Notification to the side panels
+function addNotification(text){
+  var list = document.getElementById("notificationList");
+  content = '<a href="" data-view=".view-main" class="panel-close">'+text;
+  list.insertAdjacentHTML('beforeend', content);
+}
+
+
+// Call this method once order is placed
+function orderFood(shopName, locationName){
+  // Send Order Ready After 10 seconds
+  setTimeout(function (){
+    // Create notification with click to close
+    var notificationClickToClose = app.notification.create({
+      icon: '<i class="icon demo-icon">i</i>',
+      title: 'Order Ready For Collection',
+      titleRightText: 'now',
+      subtitle: 'Please proceed to '+shopName+" at "+locationName+" to collect your order!",
+      text: 'Click me to close',
+      closeOnClick: true,
+    });
+
+    notificationClickToClose.open();
+
+    //Auto Close Notifcation after 4 seconds
+    setTimeout(function(){
+      notificationClickToClose.close();
+    },5000);
+    notificationCount++;
+    addNotification("Order at "+shopName+" Ready!");
+    udpateNotiCounter(notificationCount);
+  },15000);
+}
+
+
+
+

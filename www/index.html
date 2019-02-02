@@ -34,18 +34,14 @@
         <div class="page">
           <div class="navbar">
             <div class="navbar-inner sliding">
-              <div class="title">Left Panel</div>
+              <div class="title">
+                <i class="icon f7-icons" style="font-size:20px">person_round_fill</i><br>
+                <span id="leftId">I AM LEE TILL U LOGIN</span>
+              </div>
             </div>
           </div>
           <div class="page-content">
-            <div class="block-title">Left View Navigation</div>
-            <div class="list links-list">
-              <ul>
-                <li><a href="/left-page-1/">Left Page 1</a></li>
-                <li><a href="/left-page-2/">Left Page 2</a></li>
-              </ul>
-            </div>
-            <div class="block-title">Control Main View</div>
+            <div class="block-title">Main Menu</div>
             <div class="list links-list">
               <ul>
               <li>
@@ -82,16 +78,31 @@
       </div>
     </div>
     <!-- Right panel with cover effect -->
-    <div class="panel panel-right panel-cover theme-dark">
+    <div id="rightPanel" class="panel panel-right panel-cover theme-dark">
       <div class="view">
         <div class="page">
           <div class="navbar">
             <div class="navbar-inner">
-              <div class="title">Right Panel</div>
+              <div class="title">
+                <i class="icon f7-icons ios-only">info_round</i>
+                <i class="icon material-icons md-only">info</i>
+              Notifications</div>
             </div>
           </div>
           <div class="page-content">
-            <div class="block">Right panel content goes here</div>
+            <div class="list links-list">
+              <ul id="notificationList" >
+                <li>
+                  <a href="/mobileordering/" data-view=".view-main" class="panel-close">Offer at BadBoi Chicken Rice<br> @ SouthSpine</a>
+                </li>
+                <li>
+                  <a href="" data-view=".view-main" class="panel-close">New Assigment added <br>for CS/CZ3006</a>
+                </li>
+                <li>
+                  <a href="/announcements/" data-view=".view-main" class="panel-close">Fire Drill at North Spine <br>@ 4pm</a>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
@@ -112,17 +123,11 @@
             </div>
             <div class="title sliding">My App</div>
             <div class="right">
-              <a href="#" class="link icon-only panel-open" data-panel="right">
-                <i class="icon f7-icons ">bell_fill</i><span class="badge badge-light">4</span>
+              <a href="#" onclick="notificationReset()" class="link icon-only panel-open" data-panel="right">
+                <i class="icon f7-icons ios-only">info_round<span  class="badge color-red"></span></i>
+                <i class="icon material-icons md-only">info<span class="badge color-red"></span></i>
               </a>
             </div>
-          </div>
-        </div>
-        <!-- Toolbar-->
-        <div class="toolbar">
-          <div class="toolbar-inner">
-            <a href="#" class="link">Left Link</a>
-            <a href="#" class="link">Right Link</a>
           </div>
         </div>
         <!-- Scrollable page content-->

@@ -32,6 +32,7 @@
   z-index: 6000;
 }
 
+<<<<<<< Updated upstream
 /* A bit of demo styles */;
 .demo-swiper .swiper-slide {
   font-size: 25px;
@@ -88,3 +89,9 @@
   color: #8e8e93;
 }
 
+.badge-notify{
+   background:#4CD964;
+   position:relative;
+   top: -12px;
+   left: -16px;
+  }
