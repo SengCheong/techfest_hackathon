@@ -24,6 +24,10 @@ routes = [
     path: '/left-page-2/',
     url: './pages/left-page-2.html',
   },
+  {
+    path: '/classes/',
+    url: './pages/classes.html',
+  },
   // Page Loaders & Router
   {
     path: '/page-loader-template7/:user/:userId/:posts/:postId/',
