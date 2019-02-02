@@ -84,7 +84,6 @@ $$('#my-login-screen .login-button').on('click', function () {
 });
 
 function notificationReset(){
-  console.log("Here");
   notificationCount =0;
   udpateNotiCounter(notificationCount);
 }
@@ -94,9 +93,18 @@ orderFood("Black Stuff", "Nigga Land");
 
 
 //Add Notification to the side panels
-function addNotification(text){
+function addNotification(text, subtitle){
   var list = document.getElementById("notificationList");
-  content = '<a href="" data-view=".view-main" class="panel-close">'+text;
+  content = '<li class="item-content">'+
+                    '<a href="" data-view=".view-main" class="panel-close">'+
+                      '<div class="item-inner">'+
+                        '<div class="item-title-row">'+
+                          '<div class="item-title">'+text+'</div>'+
+                        '</div>'+
+                        '<div class="item-subtitle">'+subtitle+'</div>'+
+                      '</div>'+
+                    '</a>'+
+                    '</li>';
   list.insertAdjacentHTML('beforeend', content);
 }
 
@@ -122,7 +130,7 @@ function orderFood(shopName, locationName){
       notificationClickToClose.close();
     },5000);
     notificationCount++;
-    addNotification("Order at "+shopName+" Ready!");
+    addNotification("Order Ready For Collection",shopName+" @ "+locationName);
     udpateNotiCounter(notificationCount);
   },15000);
 }
