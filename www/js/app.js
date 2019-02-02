@@ -56,14 +56,12 @@ $$('#my-login-screen .login-button').on('click', function () {
   if(usernames.indexOf(username) != -1 && passwords.indexOf(password) != -1)
   {
     app.loginScreen.close('#my-login-screen');
-<<<<<<< Updated upstream
     app.dialog.alert(username,"Welcome");
-=======
+    
     if(username != 'c160150')
-    app.dialog.alert(username,"Welcome");
+      app.dialog.alert(username,"Welcome");
     else
-    app.dialog.alert(username,"Welcome Supreme Leader");
->>>>>>> Stashed changes
+      app.dialog.alert(username,"Welcome Supreme Leader");
   }
   else{
     // Close login screen
