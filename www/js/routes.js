@@ -36,6 +36,10 @@ routes = [
     path: '/classes/',
     url: './pages/classes.html',
   },
+  {
+    path: '/modules/',
+    url: './pages/modules.html',
+  },
   // Page Loaders & Router
   {
     path: '/page-loader-template7/:user/:userId/:posts/:postId/',
@@ -56,9 +60,6 @@ routes = [
 
       // Show Preloader
       app.preloader.show();
-
-      // User ID from request
-      var userId = routeTo.params.userId;
 
       // Simulate Ajax Request
       setTimeout(function () {
@@ -127,7 +128,7 @@ routes = [
             }
           }
         );
-      }, 200);
+      }, 0);
     },
   },
   {
