@@ -40,14 +40,24 @@ var mainView = app.views.create('.view-main', {
   url: '/'
 });
 
+
+app.loginScreen.open('#my-login-screen', true);
+
 // Login Screen Demo
 $$('#my-login-screen .login-button').on('click', function () {
   var username = $$('#my-login-screen [name="username"]').val();
   var password = $$('#my-login-screen [name="password"]').val();
 
-  // Close login screen
-  app.loginScreen.close('#my-login-screen');
+  //Sample Username for Demo Purpose (Linked to School Server in reality)
+  var usernames = ['c160150', 'c160152', 'pankaj002'];
+  var passwords = ['12345678'];
 
+  if(usernames.indexOf(username) != -1 && passwords.indexOf(password) != -1)
+  { 
+    app.loginScreen.close('#my-login-screen');
+    app.dialog.alert(username,"Welcome");
+  }
+  // Close login screen
   // Alert username and password
-  app.dialog.alert('Username: ' + username + '<br>Password: ' + password);
+  app.dialog.alert("Naughty Boi dont try to hack!", "Bad boi alert!");
 });
