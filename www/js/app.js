@@ -135,6 +135,16 @@ function orderFood(shopName, locationName){
   },15000);
 }
 
+orderSummary('img/chicken_rice_stall.jpg',"Shit","Toilet", "Free");
 
 
-
+function orderSummary(img,foodName, location, price){
+  var order = "<img src='"+img+"' width='100%'><br>";
+  order += "Food: "+foodName+"<br>";
+  order += "Restuarant: "+location+"<br>";
+  order += "Total:"+price+'<br>';
+  order += "<strong style='color:green'>Confirm Order?</strong>"
+  app.dialog.confirm(order, "Order Summary", function () {
+    app.dialog.alert("Order has been sent to restuarant!", "Order Confirmed!",);
+  });
+}
