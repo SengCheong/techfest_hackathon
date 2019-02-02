@@ -43,8 +43,8 @@ var mainView = app.views.create('.view-main', {
 
 //app.loginScreen.open('#my-login-screen', true);
 
-
 // Login Screen Demo
+
 $$('#my-login-screen .login-button').on('click', function () {
   var username = $$('#my-login-screen [name="username"]').val();
   var password = $$('#my-login-screen [name="password"]').val();
