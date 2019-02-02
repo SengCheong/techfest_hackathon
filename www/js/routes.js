@@ -4,6 +4,10 @@ routes = [
     url: './index.html',
   },
   {
+    path: '/announcements/',
+    url: './pages/announcements.html',
+  },
+  {
     path: '/mobileordering/',
     url: './pages/mobileordering.html',
   },
