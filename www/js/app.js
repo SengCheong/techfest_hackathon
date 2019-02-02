@@ -88,9 +88,6 @@ function notificationReset(){
   udpateNotiCounter(notificationCount);
 }
 
-//Testing OrderFood
-orderFood("Black Stuff", "Nigga Land");
-
 
 //Add Notification to the side panels
 function addNotification(text, subtitle){
@@ -132,19 +129,17 @@ function orderFood(shopName, locationName){
     notificationCount++;
     addNotification("Order Ready For Collection",shopName+" @ "+locationName);
     udpateNotiCounter(notificationCount);
-  },15000);
+  },10000);
 }
 
-orderSummary('img/chicken_rice_stall.jpg',"Shit","Toilet", "Free");
-
-
-function orderSummary(img,foodName, location, price){
+function orderSummary(img,foodName, shopName, location, price){
   var order = "<img src='"+img+"' width='100%'><br>";
   order += "Food: "+foodName+"<br>";
-  order += "Restuarant: "+location+"<br>";
+  order += "Restuarant: "+shopName+" @ "+location+"<br>";
   order += "Total:"+price+'<br>';
   order += "<strong style='color:green'>Confirm Order?</strong>"
   app.dialog.confirm(order, "Order Summary", function () {
     app.dialog.alert("Order has been sent to restuarant!", "Order Confirmed!",);
+    orderFood(shopName,location);
   });
 }
