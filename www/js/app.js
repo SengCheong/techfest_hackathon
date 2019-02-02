@@ -55,9 +55,16 @@ $$('#my-login-screen .login-button').on('click', function () {
   if(usernames.indexOf(username) != -1 && passwords.indexOf(password) != -1)
   { 
     app.loginScreen.close('#my-login-screen');
-    app.dialog.alert(username,"Welcome");
+    if(username != 'c160150')
+      app.dialog.alert(username,"Welcome");
+    else
+      app.dialog.alert(username,"Welcome Supreme Leader");
   }
-  // Close login screen
-  // Alert username and password
-  app.dialog.alert("Naughty Boi dont try to hack!", "Bad boi alert!");
+  else{
+    // Close login screen
+    // Alert username and password
+    app.dialog.alert("Invalid Password/ Username", "Login Failed");
+  }
+  
+  
 });
