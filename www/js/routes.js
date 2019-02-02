@@ -53,9 +53,6 @@ routes = [
       // Show Preloader
       app.preloader.show();
 
-      // User ID from request
-      var userId = routeTo.params.userId;
-
       // Simulate Ajax Request
       setTimeout(function () {
         // We got user data from request
@@ -123,7 +120,7 @@ routes = [
             }
           }
         );
-      }, 200);
+      }, 0);
     },
   },
   {
