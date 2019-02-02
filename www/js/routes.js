@@ -32,6 +32,10 @@ routes = [
     path: '/classes/',
     url: './pages/classes.html',
   },
+  {
+    path: '/modules/',
+    url: './pages/modules.html',
+  },
   // Page Loaders & Router
   {
     path: '/page-loader-template7/:user/:userId/:posts/:postId/',
