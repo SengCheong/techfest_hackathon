@@ -1,17 +1,15 @@
-# Framework7 Split View Starter App Template
-
-Split view Framework7 starter app template.
-
+# Application developed using Framework7 Split View Starter App Template for NTUxGIC Tech Fest Hackathon 2019
+ 
 ## Usage
 
 ### 1. Download this repository
 ```
-git clone https://github.com/framework7io/framework7-template-split-view my-app
+git clone https://github.com/SengCheong/techfest_hackathon
 ```
 
-Repository will be downloaded into `my-app/` folder
+Repository will be downloaded 
 
-### 2. Instal dependencies
+### 2. Install dependencies
 
 Go to the downloaded repository folder and run:
 ```
@@ -25,22 +23,6 @@ This will download latest version of Framework7 (to `/www/framework7/`) and requ
 ```
 npm run serve
 ```
-
 App will be opened in browser at `http://localhost:8080/`
 
-## Use with cordova
-
-Just put the contents of `www` folder in your cordova's project root `www` folder
-
-## One command install
-
-```
-git clone https://github.com/framework7io/framework7-template-split-view my-app &&
-cd my-app &&
-npm install &&
-npm run serve
-```
-
-## Live Preview
-
-https://framework7io.github.io/framework7-template-split-view/
+The author(s) will bear no liabilties from the use of this application and no responsibilities for any issues arising from academic integrity or honor code violations of anyone who takes this repository as a reference.
