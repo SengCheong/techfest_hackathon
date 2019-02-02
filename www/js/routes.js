@@ -4,12 +4,16 @@ routes = [
     url: './index.html',
   },
   {
-    path: '/about/',
-    url: './pages/about.html',
+    path: '/mobileordering/',
+    url: './pages/mobileordering.html',
   },
   {
     path: '/cleanliness_reporting/',
     url: './pages/cleanliness_reporting.html',
+  },
+  {
+    path: '/foodcourt/',
+    url: './pages/foodcourt.html',
   },
   {
     path: '/form/',
