@@ -49,6 +49,14 @@ routes = [
     path: '/foodcourt/koufu',
     url: './pages/foodcourt/koufu.html'
   },
+  {
+    path: '/store-details/miniwok',
+    url: './pages/store-details/miniwok.html',
+  },
+  {
+    path: '/store-details/western',
+    url: './pages/store-details/western.html',
+  },
   // Page Loaders & Router
   {
     path: '/page-loader-template7/:user/:userId/:posts/:postId/',
