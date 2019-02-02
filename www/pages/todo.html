@@ -1,0 +1,59 @@
+<template>
+  <div class="page">
+    <div class="navbar">
+      <div class="navbar-inner sliding">
+        <div class="left">
+          <a href="#" class="link back">
+            <i class="icon icon-back"></i>
+            <span class="ios-only">Back</span>
+          </a>
+        </div>
+        <div class="title">Todo</div>
+      </div>
+    </div>
+    <div class="page-content">
+      {{#each user.todo}}
+      <div class="card">
+        <div class="card-header"><b>{{courseName}}</b></div>
+        <div class="card-content card-content-padding">
+          <div class="list media-list">
+            <ul>
+              <li>
+                {{#each task}}
+                <label class="item-checkbox item-content">
+                  {{#if completed}}
+                  <input type="checkbox" name="demo-media-checkbox" checked/>
+                  {{else}}
+                  <input type="checkbox" name="demo-media-checkbox"/>
+                  {{/if}}
+                  <i class="icon icon-checkbox"></i>
+                  <div class="item-inner">
+                    <div class="item-title-row">
+                      <div class="item-title">{{title}}</div>
+                      <div class="item-after">{{time}}</div>
+                    </div>
+                    <div class="item-subtitle">{{user}}</div>
+                  </div>
+                </label>
+                {{/each}}
+              </li>
+              <li class="item-content item-input">
+                <div class="item-media"><i class="f7-icons">add</i></div>
+                <div class="item-inner">
+                  <div class="item-input-wrap">
+                    <input type="text" name="name">
+                    <span class="input-clear-button"></span>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      {{/each}}
+    </div>
+  </div>
+</template>
+<script>
+  return {}
+</script>
