@@ -49,6 +49,10 @@ routes = [
     path: '/foodcourt/koufu',
     url: './pages/foodcourt/koufu.html'
   },
+  {
+    path: '/classroom/',
+    url: './pages/classroom.html',
+  },
   // Page Loaders & Router
   {
     path: '/page-loader-template7/:user/:userId/:posts/:postId/',
