@@ -132,6 +132,7 @@ function orderFood(shopName, locationName){
   },10000);
 }
 
+
 function orderSummary(img,foodName, shopName, location, price){
   var order = "<img src='"+img+"' width='100%'><br>";
   order += "Food: "+foodName+"<br>";

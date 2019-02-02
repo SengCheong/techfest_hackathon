@@ -20,8 +20,8 @@ routes = [
     url: './pages/mobileordering.html',
   },
   {
-    path: '/cleanliness_reporting/',
-    url: './pages/cleanliness_reporting.html',
+    path: '/issue_reporting/',
+    url: './pages/issue_reporting.html',
   },
   {
     path: '/foodcourt/',
@@ -45,7 +45,6 @@ routes = [
     url: './pages/classes.html',
   },
   {
-
     path: '/modules/',
     url: './pages/modules.html',
   },
@@ -58,12 +57,12 @@ routes = [
     url: './pages/foodcourt/koufu.html'
   },
   {
-    path: '/store-details/miniwok',
-    url: './pages/store-details/miniwok.html',
+    path: '/store-details/:location/miniwok',
+    templateUrl: './pages/store-details/miniwok.html',
   },
   {
-    path: '/store-details/western',
-    url: './pages/store-details/western.html',
+    path: '/store-details/:location/western',
+    templateUrl: './pages/store-details/western.html',
   },
   {
     path: '/classroom/',
