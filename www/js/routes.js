@@ -5,7 +5,7 @@ routes = [
   },
   {
     path: '/home/',
-    url: './main.html',
+    url: './pages/home.html',
   },
   {
     path: '/announcements/',

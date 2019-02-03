@@ -3,14 +3,11 @@ var $$ = Dom7;
 var notificationCount = 2;
 var walletBal = 0;
 
-udpateNotiCounter(notificationCount);
-
 function udpateNotiCounter(notificationCount){
   $$(".badge").each(function(){
     $$(this).html(notificationCount);
   });
 }
-
 
 // Framework7 App main instance
 var app  = new Framework7({
@@ -48,24 +45,24 @@ var leftView = app.views.create('.view-left', {
 
 // Init/Create main view
 var mainView = app.views.create('.view-main', {
-  url: '/'
+  url:"/home/",
+  domCache: true 
 });
-
-
-app.loginScreen.open('#my-login-screen', true);
 
 // app.onPageInit('home', function (page) {
 //   var wallet = document.getElementById("walletBalance");
 //   wallet.innerHTML = "$"+walletBal;
 // });
 
-$$(document).on('page:reinit', function (e) {
+app.loginScreen.open('#my-login-screen', true);
+
+$$(document).on('page:beforein', function (e) {
   // Do something here when page loaded and initialized
   var page = e.detail.pageEl;
   console.log(e.detail.name);
   if(e.detail.name == 'home'){
     console.log(page);
-
+    udpateNotiCounter(notificationCount);
     var wallet = document.getElementById("walletBalance");
     wallet.innerHTML = "$"+walletBal;
   }
@@ -165,6 +162,6 @@ function orderSummary(img,foodName, shopName, location, price){
     app.dialog.alert("Order has been sent to restuarant!<br>New Balance: $"+walletBal, "Order Confirmed!",);
     orderFood(shopName,location);
     var view=app.views.current;
-    view.router.back(view.history[1],{force:true});
+    view.router.back(view.history[0],{force:true});
   });
 }
