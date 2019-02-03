@@ -1,7 +1,7 @@
 routes = [
   {
     path: '/',
-    url: './index.html',
+    url: './main.html',
   },
   {
     path: '/announcements/',
