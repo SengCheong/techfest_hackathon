@@ -164,6 +164,7 @@ function orderSummary(img,foodName, shopName, location, price){
     console.log(walletBal);
     app.dialog.alert("Order has been sent to restuarant!<br>New Balance: $"+walletBal, "Order Confirmed!",);
     orderFood(shopName,location);
-    app.router.navigate('/announcements/', {reloadCurrent: false});
+    var view=app.views.current;
+    view.router.back(view.history[1],{force:true});
   });
 }
