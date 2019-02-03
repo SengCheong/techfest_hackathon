@@ -51,7 +51,7 @@ var mainView = app.views.create('.view-main', {
 });
 
 
-//app.loginScreen.open('#my-login-screen', true);
+app.loginScreen.open('#my-login-screen', true);
 
 // Login Screen Demo
 
@@ -67,11 +67,6 @@ $$('#my-login-screen .login-button').on('click', function () {
   {
     app.loginScreen.close('#my-login-screen');
     app.dialog.alert(username,"Welcome");
-    
-    if(username != 'c160150')
-      app.dialog.alert(username,"Welcome");
-    else
-      app.dialog.alert(username,"Welcome Supreme Leeader");
     $$('#leftId').html(username);
   }
   else{
