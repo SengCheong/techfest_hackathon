@@ -2,6 +2,7 @@
 var $$ = Dom7;
 var notificationCount = 2;
 var walletBal = 0;
+var food = false;
 
 function udpateNotiCounter(notificationCount){
   $$(".badge").each(function(){
@@ -70,7 +71,6 @@ $$(document).on('page:beforein', function (e) {
 
 
 // Login Screen Demo
-
 $$('#my-login-screen .login-button').on('click', function () {
   var username = $$('#my-login-screen [name="username"]').val();
   var password = $$('#my-login-screen [name="password"]').val();
@@ -88,7 +88,10 @@ $$('#my-login-screen .login-button').on('click', function () {
     wallet.innerHTML = "$"+walletBal;
     app.loginScreen.close('#my-login-screen');
     app.dialog.alert(username,"Welcome");
+    
     $$('#leftId').html(username);
+    orderFood("Each A Cup","North Spine", 8000);
+    food = true;
   }
   else{
     // Close login screen
@@ -123,7 +126,7 @@ function addNotification(text, subtitle){
 
 
 // Call this method once order is placed
-function orderFood(shopName, locationName){
+function orderFood(shopName, locationName, readyTime){
   // Send Order Ready After 10 seconds
   setTimeout(function (){
     // Create notification with click to close
@@ -145,7 +148,15 @@ function orderFood(shopName, locationName){
     notificationCount++;
     addNotification("Order Ready For Collection",shopName+" @ "+locationName);
     udpateNotiCounter(notificationCount);
-  },10000);
+
+    if(readyTime == 8000){
+      var status = document.getElementById("status");
+      console.log(status);
+      status.innerHTML = "Status: READY TO COLLECT";
+    }
+      
+
+  },readyTime);
 }
 
 
@@ -160,7 +171,7 @@ function orderSummary(img,foodName, shopName, location, price){
     walletBal -= parseInt(price.substring(1, price.length));
     console.log(walletBal);
     app.dialog.alert("Order has been sent to restuarant!<br>New Balance: $"+walletBal, "Order Confirmed!",);
-    orderFood(shopName,location);
+    orderFood(shopName,location,10000);
     var view=app.views.current;
     view.router.back(view.history[0],{force:true});
   });
