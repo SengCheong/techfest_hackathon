@@ -1,0 +1,77 @@
+<div class="page" data-name="cleanliness_reporting">
+  <div class="navbar">
+    <div class="navbar-inner sliding">
+      <div class="left">
+        <a href="#" class="link back">
+          <i class="icon icon-back"></i>
+          <span class="ios-only">Back</span>
+        </a>
+      </div>
+      <div class="title">Issue Reporting</div>
+    </div>
+  </div>
+  <div class="page-content">
+    <div class="block">
+      <div class="block-title">
+        <h2 style="color:black; text-align:center; margin-top: 0; margin-bottom: 5; margin-left: 0; margin-right: 0;">
+          Report Issue
+        </h2>
+      </div>
+    </div>
+    <div class="block">
+      <div>
+        <div class="block-title">
+          <div class="row">
+            <h3 class="col-70" style="margin:0 auto; text-align: center">
+              Picture of Issue:
+            </h3>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-container">
+        <div class="swiper-pagination"></div>
+        <div class="swiper-wrapper">
+          <div class="swiper-slide"><img src="img/noimage.png" style="width:90%; border-style:solid; border-radius: 5px; margin-left:5%;"></div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-70" style="margin:0 auto;">
+          <a href="#" class="button button-big color-red" disabled>No Camera Detected</a>
+        </div>
+      </div>
+    </div>
+    <div class="block block-strong">
+      <div class="list no-hairlines-md">
+        <ul>
+          <li>
+            <div class="item-content item-input">
+              <div class="item-inner">
+                <div class="item-title item-label">Location</div>
+                <div class="item-input-wrap">
+                  <input type="text" placeholder="e.g. Blk and room number"/>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="item-content item-input">
+              <div class="item-inner">
+                <div class="item-title item-label">Description</div>
+                <div class="item-input-wrap">
+                  <textarea placeholder="Additional Description of issue"></textarea>
+                </div>
+              </div>
+            </div>
+          </li>       
+          <li>
+            <div class="item-content item-input">
+              <div class="item-inner">
+                <button class="button button-raised button-fill open-alert" onclick="submit_report();">Submit Report</button>
+              </div>
+            </div>
+          </li>   
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

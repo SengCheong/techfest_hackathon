@@ -64,9 +64,10 @@ $$(document).on('page:reinit', function (e) {
   var page = e.detail.pageEl;
   console.log(e.detail.name);
   if(e.detail.name == 'home'){
-    console.log()
-    $$(page).find('#walletBalance').html("$"+walletBal);
+    console.log(page);
 
+    var wallet = document.getElementById("walletBalance");
+    wallet.innerHTML = "$"+walletBal;
   }
 })
 
@@ -158,8 +159,11 @@ function orderSummary(img,foodName, shopName, location, price){
   order += "Total:"+price+'<br>';
   order += "<strong style='color:green'>Confirm Order?</strong>"
   app.dialog.confirm(order, "Order Summary", function () {
-    walletBal -= price;
+    console.log(price);
+    walletBal -= parseInt(price.substring(1, price.length));
+    console.log(walletBal);
     app.dialog.alert("Order has been sent to restuarant!<br>New Balance: $"+walletBal, "Order Confirmed!",);
     orderFood(shopName,location);
+    app.router.navigate('/announcements/', {reloadCurrent: false});
   });
 }
