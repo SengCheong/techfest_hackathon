@@ -1,6 +1,7 @@
 // Dom7
 var $$ = Dom7;
 var notificationCount = 2;
+var walletBal = 0;
 
 udpateNotiCounter(notificationCount);
 
@@ -53,6 +54,23 @@ var mainView = app.views.create('.view-main', {
 
 app.loginScreen.open('#my-login-screen', true);
 
+// app.onPageInit('home', function (page) {
+//   var wallet = document.getElementById("walletBalance");
+//   wallet.innerHTML = "$"+walletBal;
+// });
+
+$$(document).on('page:reinit', function (e) {
+  // Do something here when page loaded and initialized
+  var page = e.detail.pageEl;
+  console.log(e.detail.name);
+  if(e.detail.name == 'home'){
+    console.log()
+    $$(page).find('#walletBalance').html("$"+walletBal);
+
+  }
+})
+
+
 // Login Screen Demo
 
 $$('#my-login-screen .login-button').on('click', function () {
@@ -60,11 +78,16 @@ $$('#my-login-screen .login-button').on('click', function () {
   var password = $$('#my-login-screen [name="password"]').val();
 
   //Sample Username for Demo Purpose (Linked to School Server in reality)
-  var usernames = ['c160150', 'c160152', 'pankaj002'];
+  var usernames = ['c160150', 'c160152', 'pankaj002','jtan346'];
   var passwords = ['12345678'];
+  var walletBals = ['120','201','153','199'];
+  var wallet = document.getElementById("walletBalance");
+
 
   if(usernames.indexOf(username) != -1 && passwords.indexOf(password) != -1)
   {
+    walletBal = walletBals[usernames.indexOf(username)];
+    wallet.innerHTML = "$"+walletBal;
     app.loginScreen.close('#my-login-screen');
     app.dialog.alert(username,"Welcome");
     $$('#leftId').html(username);
@@ -135,7 +158,8 @@ function orderSummary(img,foodName, shopName, location, price){
   order += "Total:"+price+'<br>';
   order += "<strong style='color:green'>Confirm Order?</strong>"
   app.dialog.confirm(order, "Order Summary", function () {
-    app.dialog.alert("Order has been sent to restuarant!", "Order Confirmed!",);
+    walletBal -= price;
+    app.dialog.alert("Order has been sent to restuarant!<br>New Balance: $"+walletBal, "Order Confirmed!",);
     orderFood(shopName,location);
   });
 }
