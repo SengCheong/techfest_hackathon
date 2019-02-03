@@ -51,7 +51,7 @@ var mainView = app.views.create('.view-main', {
 });
 
 
-//app.loginScreen.open('#my-login-screen', true);
+app.loginScreen.open('#my-login-screen', true);
 
 // Login Screen Demo
 
