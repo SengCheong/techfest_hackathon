@@ -47,7 +47,7 @@ var leftView = app.views.create('.view-left', {
 // Init/Create main view
 var mainView = app.views.create('.view-main', {
   url:"/home/",
-  domCache: true 
+  domCache: true
 });
 
 // app.onPageInit('home', function (page) {
@@ -88,7 +88,7 @@ $$('#my-login-screen .login-button').on('click', function () {
     wallet.innerHTML = "$"+walletBal;
     app.loginScreen.close('#my-login-screen');
     app.dialog.alert(username,"Welcome");
-    
+
     $$('#leftId').html(username);
     orderFood("Each A Cup","North Spine", 8000);
     food = true;
@@ -154,7 +154,7 @@ function orderFood(shopName, locationName, readyTime){
       console.log(status);
       status.innerHTML = "Status: READY TO COLLECT";
     }
-      
+
 
   },readyTime);
 }
@@ -174,5 +174,45 @@ function orderSummary(img,foodName, shopName, location, price){
     orderFood(shopName,location,10000);
     var view=app.views.current;
     view.router.back(view.history[0],{force:true});
+    $$(document).on('page:beforein', function (e) {
+      // Do something here when page loaded and initialized
+      if(e.detail.name == 'home'){
+
+        var list = document.getElementById("curOrderList");
+        var currentDate = new Date();
+
+        var date = currentDate.getDate();
+        var month = currentDate.getMonth();
+        var year = currentDate.getFullYear();
+        var h = currentDate.getHours();
+        var min = currentDate.getMinutes();
+        var dateTimeString = date + "/" +(month + 1) + "/" + year;
+        if(h>=12){
+          if(h>12){
+            h -=12;
+          }
+          dateTimeString += " "+h+":"+min+"pm";
+        }else{
+          dateTimeString += " "+h+":"+min+"am";
+        }
+
+        content = '<li class="item-content">\n' +
+          '              <div class="item-media"><img src="'+img+'" width="50" height="50"/></div>\n' +
+          '              <div class="item-inner">\n' +
+          '                <div class="item-title-row">\n' +
+          '                  <div class="item-title">'+foodName+'</div>\n' +
+          '                </div>\n' +
+          '                <div class="item-subtitle">Cost: '+price+'</div>\n' +
+          '                <div id="status" class="item-subtitle">Status: PREPARING</div>\n' +
+          '                <div class="item-subtitle" style="font-size: 12px; color:grey;">Last Updated: '+dateTimeString+'</div>\n' +
+          '              </div>\n' +
+          '            </li>';
+
+        list.innerHTML += content;
+
+      }
+    })
+
+
   });
 }
