@@ -78,7 +78,7 @@ $$('#my-login-screen .login-button').on('click', function () {
   var password = $$('#my-login-screen [name="password"]').val();
 
   //Sample Username for Demo Purpose (Linked to School Server in reality)
-  var usernames = ['c160150', 'c160152', 'pankaj002','jtan346'];
+  var usernames = ['c160150', 'c160152', 'pankaj002','jtan346','student'];
   var passwords = ['12345678'];
   var walletBals = ['120','201','153','199'];
   var wallet = document.getElementById("walletBalance");
